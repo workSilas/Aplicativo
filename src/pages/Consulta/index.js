@@ -1,9 +1,14 @@
 import { View, Text, ImageBackground, Image, TouchableOpacity, FlatList, SafeAreaView } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import styles from "./styles";
 
 export default function Consulta() {
     const navegacao = useNavigation();
+    const { params } = useRoute(); // o "useRoute" me da a possibilidade de recuperar parametros enviados."
+
+    const { salaSelecionada } = params; // fazendo desestruturação para pegar apenas o parametro q enviei la na home. Percebe-se que o nome segue o mesmo.
+
+    console.log(salaSelecionada); // no momento estou apenas mostrando no console, mas vc pode mostrar em qualquer lugar do teu codigo.
 
     return (
         <SafeAreaView>

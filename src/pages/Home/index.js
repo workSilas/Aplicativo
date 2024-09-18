@@ -73,7 +73,9 @@ export default function Home() {
 
                             <TouchableOpacity
                                 style={styles.consulta}
-                                onPress={() => navegacao.navigate('Consulta')}
+                                onPress={() => navegacao.navigate('Consulta', {
+                                    salaSelecionada: salas
+                                })} // estou enviando a sala como se fosse um parametro de "rota", e la na tela "consulta" irei recupera-lo.
                             >
 
                                 <Text style={styles.textConsulta}>CONSULTA</Text>
