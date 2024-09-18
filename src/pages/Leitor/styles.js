@@ -39,6 +39,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontWeight: "900",
         fontSize: fontSizeVW,
+    },
+    list: {
+        gap: 30,
+        padding: 20
     }
 });
 

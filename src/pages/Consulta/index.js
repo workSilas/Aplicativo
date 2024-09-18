@@ -1,18 +1,25 @@
 import { View, Text, ImageBackground, Image, TouchableOpacity, FlatList, SafeAreaView } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import styles from "./styles";
+import { useState } from "react";
 
 export default function Consulta() {
     const navegacao = useNavigation();
     const { params } = useRoute(); // o "useRoute" me da a possibilidade de recuperar parametros enviados."
 
-    const { salaSelecionada } = params; // fazendo desestruturação para pegar apenas o parametro q enviei la na home. Percebe-se que o nome segue o mesmo.
+    const { sala, qrCode } = params; // fazendo desestruturação para pegar apenas o parametro q enviei la na home. Percebe-se que o nome segue o mesmo.
+    console.log(qrCode); // no momento estou apenas mostrando no console, mas vc pode mostrar em qualquer lugar do teu codigo.
+    console.log(sala);
 
-    console.log(salaSelecionada); // no momento estou apenas mostrando no console, mas vc pode mostrar em qualquer lugar do teu codigo.
+    const [consulta, setConsulta] = useState([])
+
+
+    function listaConsulta() {
+        setConsulta((arr) => [...arr, { id: new Date().getDay(), code: qrCode, sala: sala }])
+    }
 
     return (
         <SafeAreaView>
-
             <View style={styles.container}>
                 <ImageBackground
                     style={styles.background}
@@ -34,14 +41,36 @@ export default function Consulta() {
                     </View>
 
                     <View style={styles.sectionList}>
+
+                        <TouchableOpacity
+                            style={styles.refresh}
+                            onPress={() => { listaConsulta() }} // adiciona noa array
+                        >
+                            <Text style={styles.textRefresh}>atualizar</Text>
+                        </TouchableOpacity>
+
                         <View style={styles.sectionRow}>
-                            <Text style={styles.title}>ID</Text>
-                            <Text style={styles.title}>QR Code</Text>
+                            <Text style={styles.title}>Code</Text>
+                            <Text style={styles.title}>Sala</Text>
                             <Text style={styles.title}>Data e Hora</Text>
                         </View>
 
-                        <FlatList
+                        <FlatList           // O id na renderização é só pra ver como vai ficar
+                            style={styles.list}
 
+                            data={consulta.reverse()}
+                            renderItem={({ item }) => {
+                                return (
+                                    <View style={styles.listView}>
+                                        <Text style={styles.itemList}>{item.id}</Text>
+                                        <Text style={styles.itemList}>{item.sala}</Text>
+                                        <Text style={styles.itemList}>{item.code}</Text>
+                                    </View>
+                                )
+                            }}
+                            keyExtractor={(item) => {
+                                item.id
+                            }}
                         />
                     </View>
                 </ImageBackground>

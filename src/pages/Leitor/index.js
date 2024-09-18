@@ -10,21 +10,27 @@ export default function Leitor() {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
 
+  const { params } = useRoute();
+
+  const { salaSelecionada } = params; // fazendo desestruturação para pegar apenas o parametro q enviei la na home. Percebe-se que o nome segue o mesmo.
+  console.log(salaSelecionada);
+  
+
   useEffect(() => {
     const getCameraPermissions = async () => {
       const { status } = await Camera.requestCameraPermissionsAsync();
       setHasPermission(status === "granted");
     };
-
     getCameraPermissions();
   }, []);
 
   const handleBarcodeScanned = ({ data }) => {
     setScanned(true);
-    navegacao.navigate('Home')
+    navegacao.navigate('Consulta', {
+      qrCode: data,
+      sala: salaSelecionada
+    })
     alert(`QR-CODE scanneado com sucesso!`);
-
-
   }
 
   if (hasPermission === null) {
@@ -71,7 +77,4 @@ export default function Leitor() {
     </View>
 
   );
-
-
-
 }

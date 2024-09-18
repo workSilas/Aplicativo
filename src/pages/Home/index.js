@@ -7,11 +7,10 @@ import { SelectList } from 'react-native-dropdown-select-list'
 
 
 export default function Home() {
-    const route = useRoute()
-    const navegacao = useNavigation()
-    const { width, height } = Dimensions.get('window');
 
-    const fontSizeVW = width * 0.06; // 5vw
+    const navegacao = useNavigation()
+    const { height } = Dimensions.get('window');
+
     const fontSizeVH = height * 0.68; // 5vh
 
     const [selected, setSelected] = React.useState("3ºAndar");
@@ -113,8 +112,7 @@ export default function Home() {
                             <TouchableOpacity
                                 style={styles.escanear}
                                 onPress={() => navegacao.navigate('Leitor', {
-                                    selectedAndar: selected,
-                                    selectedSala: salas
+                                    salaSelecionada: salas
                                 })}
                             >
 

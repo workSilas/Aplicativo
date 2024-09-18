@@ -6,9 +6,10 @@ const listVW = width * 0.90; // 5vw
 const listVH = height * 0.55; // 5vh
 
 const fontSizeVW = width * 0.07; // 5vw
-const fontSizeVH = height * 5; // 5vh
 
 const fontListSizeVW = width * 0.05; // 5vw
+
+const refresh = width * 0.05; // 5vw
 
 
 const styles = StyleSheet.create({
@@ -54,6 +55,22 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         marginTop: 20
     },
+    refresh: {
+        width: '25%',
+        height: 25,
+        alignSelf: 'flex-end',
+        justifyContent: 'center',
+        backgroundColor: 'orange',
+        borderRadius: 5,
+        marginBottom: 10,
+        marginRight: '5%'
+    },
+    textRefresh: {
+        color: '#fff',
+        textAlign: 'center',
+        fontWeight: "400",
+        fontSize: refresh,
+    },
     sectionRow: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -64,6 +81,20 @@ const styles = StyleSheet.create({
         color: '#000',
         fontSize: fontListSizeVW
     },
+    list: {
+        marginTop: 20,
+        backgroundColor: '#f6f6f6',
+        width: '90%'
+    },
+    listView: {
+        display: 'flex',
+        flexDirection: 'row-reverse',
+        width: '90%',
+        textAlign: 'center',
+        justifyContent: 'space-around',
+        marginTop: 20,
+        
+    }
 });
 
 export default styles;
