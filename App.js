@@ -4,6 +4,7 @@ import React from 'react';
 import Leitor from './src/pages/Leitor';
 import Home from './src/pages/Home';
 import Consulta from './src/pages/Consulta';
+import Toast from "react-native-toast-message"
 
 export default function App() {
   const stackNavigation = createNativeStackNavigator()
@@ -16,6 +17,7 @@ export default function App() {
         <stackNavigation.Screen name='Leitor' component={Leitor} options={{ headerShown: false }} />
         <stackNavigation.Screen name='Consulta' component={Consulta} options={{ headerShown: false }} />
       </stackNavigation.Navigator>
+      <Toast/>
     </NavigationContainer>
 
   );
