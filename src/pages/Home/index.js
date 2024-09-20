@@ -1,10 +1,9 @@
-import { View, Text, ImageBackground, Image, TouchableOpacity, ScrollView, SafeAreaView } from "react-native";
 import React from "react";
-import { useNavigation, useRoute } from "@react-navigation/native";
 import styles from "./styles";
+import { View, Text, ImageBackground, Image, TouchableOpacity, ScrollView, SafeAreaView } from "react-native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { Dimensions } from "react-native";
 import { SelectList } from 'react-native-dropdown-select-list'
-
 
 export default function Home() {
 
@@ -112,7 +111,8 @@ export default function Home() {
                             <TouchableOpacity
                                 style={styles.escanear}
                                 onPress={() => navegacao.navigate('Leitor', {
-                                    salaSelecionada: salas
+                                    salaSelecionada: salas,
+                                    andarSelecionado: selected
                                 })}
                             >
 

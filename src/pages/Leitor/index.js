@@ -1,8 +1,8 @@
-import { CameraView, Camera } from 'expo-camera';
+import styles from './styles';
 import React, { useState, useEffect } from 'react';
+import { CameraView, Camera } from 'expo-camera';
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { Button, StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native';
-import styles from './styles';
 
 export default function Leitor() {
 
@@ -12,7 +12,7 @@ export default function Leitor() {
 
   const { params } = useRoute();
 
-  const { salaSelecionada } = params; // fazendo desestruturação para pegar apenas o parametro q enviei la na home. Percebe-se que o nome segue o mesmo.
+  const { salaSelecionada, andarSelecionado } = params; // fazendo desestruturação para pegar apenas o parametro q enviei la na home. Percebe-se que o nome segue o mesmo.
   console.log(salaSelecionada);
   
 
@@ -28,7 +28,8 @@ export default function Leitor() {
     setScanned(true);
     navegacao.navigate('Consulta', {
       qrCode: data,
-      sala: salaSelecionada
+      sala: salaSelecionada,
+      andar: andarSelecionado
     })
     alert(`QR-CODE scanneado com sucesso!`);
   }

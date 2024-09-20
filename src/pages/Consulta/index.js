@@ -1,21 +1,37 @@
 import { View, Text, ImageBackground, Image, TouchableOpacity, FlatList, SafeAreaView } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import styles from "./styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import axios from "axios";
+import { and } from "sequelize";
 
 export default function Consulta() {
     const navegacao = useNavigation();
     const { params } = useRoute(); // o "useRoute" me da a possibilidade de recuperar parametros enviados."
 
-    const { sala, qrCode } = params; // fazendo desestruturação para pegar apenas o parametro q enviei la na home. Percebe-se que o nome segue o mesmo.
+    const { sala, qrCode, andar } = params; // fazendo desestruturação para pegar apenas o parametro q enviei la na home. Percebe-se que o nome segue o mesmo.
     console.log(qrCode); // no momento estou apenas mostrando no console, mas vc pode mostrar em qualquer lugar do teu codigo.
     console.log(sala);
 
     const [consulta, setConsulta] = useState([])
 
 
-    function listaConsulta() {
-        setConsulta((arr) => [...arr, { id: new Date().getDay(), code: qrCode, sala: sala }])
+    const url = 'https://www.feiradeprofissoes-insf.com.br/api/visita'
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoiZmVpcmEiLCJzZW5oYSI6ImZyMyEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjY3MDMyNDB9.yFTyVjiuoseejMKTj4pTLW0vGG0cvqX_vvUZ9NQZMyc'
+
+    useEffect(() => {
+        async function marcarVisita() {
+            await axios.post(url, { andar: andar, sala: sala, qrcode: qrCode }, { headers: { 'x-access-token': token }})
+            alert('Visita registrada!');
+        }
+        marcarVisita();
+    }, [])
+
+
+    async function listaConsulta() {
+        let resp = await axios.get(url, { headers: { 'x-access-token': token }})
+        setConsulta(resp.data);
     }
 
     return (
@@ -44,7 +60,7 @@ export default function Consulta() {
 
                         <TouchableOpacity
                             style={styles.refresh}
-                            onPress={() => { listaConsulta() }} // adiciona noa array
+                            onPress={() => { listaConsulta() }} // adiciona no array
                         >
                             <Text style={styles.textRefresh}>atualizar</Text>
                         </TouchableOpacity>
@@ -52,10 +68,10 @@ export default function Consulta() {
                         <View style={styles.sectionRow}>
                             <Text style={styles.title}>Code</Text>
                             <Text style={styles.title}>Sala</Text>
-                            <Text style={styles.title}>Data e Hora</Text>
+                            <Text style={styles.title}>Hora</Text>
                         </View>
 
-                        <FlatList           // O id na renderização é só pra ver como vai ficar
+                        <FlatList           // O id na renderização é só para ver como vai ficar
                             style={styles.list}
 
                             data={consulta.reverse()}
@@ -78,4 +94,3 @@ export default function Consulta() {
         </SafeAreaView>
     );
 }
-
