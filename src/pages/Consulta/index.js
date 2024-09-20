@@ -19,14 +19,14 @@ export default function Consulta() {
 
     useEffect(() => {
         async function marcarVisita() {
-            await axios.post(url, { andar: andar, sala: sala, qrcode: qrCode }, { headers: { 'x-access-token': token }})
+            await axios.post(url, { andar: andar, sala: sala, qrcode: qrCode }, { headers: { 'x-access-token': token } })
             alert('Visita registrada!');
         }
         marcarVisita();
     }, [])
 
     async function listaConsulta() {
-        let resp = await axios.get(`${url}/${andar}/${sala}`, { headers: { 'x-access-token': token }})
+        let resp = await axios.get(`${url}/${andar}/${sala}`, { headers: { 'x-access-token': token } })
         setConsulta(resp.data);
     }
 

@@ -85,7 +85,6 @@ const styles = StyleSheet.create({
         marginTop: 20,
         backgroundColor: '#f6f6f6',
         width: '90%',
-        alignSelf: "center"
     },
     listView: {
         display: 'flex',
@@ -96,10 +95,11 @@ const styles = StyleSheet.create({
         marginTop: 20,
         borderRadius: 12, 
         padding: 20,
-        backgroundColor: 'orange' 
+        backgroundColor: 'orange',
+        width: '100%' 
     },
     itemList: {
-        fontWeight: "400",
+        fontWeight: "700",
         color: '#fff',
         fontSize: fontListSizeVW
     }
