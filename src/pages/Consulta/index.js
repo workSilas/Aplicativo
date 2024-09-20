@@ -62,9 +62,7 @@ export default function Consulta() {
                         </TouchableOpacity>
 
                         <View style={styles.sectionRow}>
-                            <Text style={styles.title}>Code</Text>
-                            <Text style={styles.title}>Sala</Text>
-                            <Text style={styles.title}>Hora</Text>
+                            <Text style={styles.title}>Visitas</Text>
                         </View>
 
                         <FlatList           // O id na renderização é só para ver como vai ficar

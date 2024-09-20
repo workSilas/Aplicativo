@@ -74,26 +74,34 @@ const styles = StyleSheet.create({
     sectionRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 50
+        borderColor: '#000'
     },
     title: {
-        fontWeight: "300",
+        fontWeight: "600",
         color: '#000',
         fontSize: fontListSizeVW
     },
     list: {
         marginTop: 20,
         backgroundColor: '#f6f6f6',
-        width: '90%'
+        width: '90%',
+        alignSelf: "center"
     },
     listView: {
         display: 'flex',
-        flexDirection: 'row-reverse',
         width: '90%',
         textAlign: 'center',
+        alignItems: 'center',
         justifyContent: 'space-around',
         marginTop: 20,
-        
+        borderRadius: 12, 
+        padding: 20,
+        backgroundColor: 'orange' 
+    },
+    itemList: {
+        fontWeight: "400",
+        color: '#fff',
+        fontSize: fontListSizeVW
     }
 });
 
