@@ -2,9 +2,7 @@ import { View, Text, ImageBackground, Image, TouchableOpacity, FlatList, SafeAre
 import { useNavigation, useRoute } from "@react-navigation/native";
 import styles from "./styles";
 import { useEffect, useState } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
-import { and } from "sequelize";
 
 export default function Consulta() {
     const navegacao = useNavigation();
@@ -15,7 +13,6 @@ export default function Consulta() {
     console.log(sala);
 
     const [consulta, setConsulta] = useState([])
-
 
     const url = 'https://www.feiradeprofissoes-insf.com.br/api/visita'
     const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoiZmVpcmEiLCJzZW5oYSI6ImZyMyEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjY3MDMyNDB9.yFTyVjiuoseejMKTj4pTLW0vGG0cvqX_vvUZ9NQZMyc'
