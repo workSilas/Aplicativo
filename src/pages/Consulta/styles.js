@@ -9,7 +9,7 @@ const fontSizeVW = width * 0.07; // 5vw
 
 const fontListSizeVW = width * 0.05; // 5vw
 
-const refresh = width * 0.05; // 5vw
+const refreshVW = width * 0.05; // 5vw
 
 
 const styles = StyleSheet.create({
@@ -69,8 +69,9 @@ const styles = StyleSheet.create({
     textRefresh: {
         color: '#fff',
         textAlign: 'center',
+        alignItems: `center`,
         fontWeight: "400",
-        fontSize: refresh,
+        fontSize: refreshVW,
     },
     sectionRow: {
         flexDirection: 'row',
