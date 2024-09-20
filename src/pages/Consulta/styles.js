@@ -53,7 +53,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
         paddingTop: 20,
-        marginTop: 20
+        marginTop: 20,
+        height: `50%`
     },
     refresh: {
         width: '25%',
@@ -84,6 +85,7 @@ const styles = StyleSheet.create({
     list: {
         marginTop: 20,
         width: '90%',
+        bottom: 0
     },
     listView: {
         display: 'flex',

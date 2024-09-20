@@ -23,29 +23,29 @@ export default function Home() {
     ]
     const Salas = {
         'Patio': [
-            { key: 'Sala 4', value: 'Sala 4', },
-            { key: 'Sala 6', value: 'Sala 6', },
-            { key: 'Oficina Mecanica', value: 'Oficina Mecanica', },
-            { key: 'Oficina Eletrica', value: 'Oficina Eletrica', },
-            { key: 'Cedesp', value: 'Cedesp', },
-            { key: 'Fios de Berenice', value: 'Fios de Berenice', },
-            { key: 'Info Escola', value: 'Info Escola', },
+            { key: '1', value: 'Sala 4', },
+            { key: '2', value: 'Sala 6', },
+            { key: '3', value: 'Oficina Mecanica', },
+            { key: '4', value: 'Oficina Eletrica', },
+            { key: '5', value: 'Cedesp', },
+            { key: '6', value: 'Fios de Berenice', },
+            { key: '7', value: 'Info Escola', },
         ],
         'Andar 1': [
-            { key: 'Sala 18', value: 'Sala 18', },
-            { key: 'Sala 19', value: 'Sala 19', },
-            { key: 'Sala 20', value: 'Sala 20', },
+            { key: '9', value: 'Sala 18', },
+            { key: '10', value: 'Sala 19', },
+            { key: '11', value: 'Sala 20', },
         ],
         'Andar 2': [
-            { key: 'Sala 24', value: 'Sala 24', },
-            { key: 'Sala 25', value: 'Sala 25', },
-            { key: 'Sala 26', value: 'Sala 26', },
-            { key: 'Sala 27', value: 'Sala 27', },
+            { key: '12', value: 'Sala 24', },
+            { key: '13', value: 'Sala 25', },
+            { key: '14', value: 'Sala 26', },
+            { key: '15', value: 'Sala 27', },
         ],
         'Auditorio': [
-            { key: 'RH', value: 'RH', },
-            { key: 'CATE', value: 'CATE', },
-            { key: 'Entrevista', value: 'Entrevista', },
+            { key: '16', value: 'RH', },
+            { key: '17', value: 'CATE', },
+            { key: '18', value: 'Entrevista', },
         ],
     }
 
