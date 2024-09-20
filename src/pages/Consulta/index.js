@@ -18,8 +18,7 @@ export default function Consulta() {
   const { params } = useRoute(); // o "useRoute" me da a possibilidade de recuperar parametros enviados."
 
   const { sala, qrCode, andar } = params; // fazendo desestruturação para pegar apenas o parametro q enviei la na home. Percebe-se que o nome segue o mesmo.
-  console.log(qrCode); // no momento estou apenas mostrando no console, mas vc pode mostrar em qualquer lugar do teu codigo.
-  console.log(sala);
+
 
   const [consulta, setConsulta] = useState([]);
 
