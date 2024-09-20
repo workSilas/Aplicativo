@@ -18,8 +18,6 @@ export default function Consulta() {
   const { params } = useRoute(); // o "useRoute" me da a possibilidade de recuperar parametros enviados."
 
   const { sala, qrCode, andar } = params; // fazendo desestruturação para pegar apenas o parametro q enviei la na home. Percebe-se que o nome segue o mesmo.
-
-
   const [consulta, setConsulta] = useState([]);
 
   const url = "https://www.feiradeprofissoes-insf.com.br/api/visita";

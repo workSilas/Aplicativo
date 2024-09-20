@@ -10,15 +10,13 @@ export default function App() {
   const stackNavigation = createNativeStackNavigator()
 
   return (
-
     <NavigationContainer>
       <stackNavigation.Navigator>
         <stackNavigation.Screen name='Home' component={Home} options={{ headerShown: false }} />
         <stackNavigation.Screen name='Leitor' component={Leitor} options={{ headerShown: false }} />
         <stackNavigation.Screen name='Consulta' component={Consulta} options={{ headerShown: false }} />
       </stackNavigation.Navigator>
-      <Toast/>
+      <Toast />
     </NavigationContainer>
-
   );
 }

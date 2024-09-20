@@ -4,11 +4,8 @@ import { Dimensions } from "react-native";
 const { width, height } = Dimensions.get('window');
 const listVW = width * 0.90; // 5vw
 const listVH = height * 0.55; // 5vh
-
 const fontSizeVW = width * 0.07; // 5vw
-
 const fontListSizeVW = width * 0.05; // 5vw
-
 const refreshVW = width * 0.035; // 5vw
 
 

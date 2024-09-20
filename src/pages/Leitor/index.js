@@ -14,7 +14,7 @@ export default function Leitor() {
   const { params } = useRoute();
 
   const { salaSelecionada, andarSelecionado } = params; // fazendo desestruturação para pegar apenas o parametro q enviei la na home. Percebe-se que o nome segue o mesmo.
- 
+
 
 
   useEffect(() => {

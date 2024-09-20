@@ -3,7 +3,7 @@ import { Dimensions } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 const fontSizeVW = width * 0.06; // 5vw
-const fontSizeVH = height * 5; // 5vh
+const buttonVW = width * 0.4; // 5vh
 
 const styles = StyleSheet.create({
     background: {
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         fontSize: fontSizeVW,
     },
     consulta: {
-        width: '50%',
+        width: buttonVW,
         height: 50,
         justifyContent: 'center',
         backgroundColor: 'orange',
