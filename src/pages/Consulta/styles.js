@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
     },
     list: {
         marginTop: 20,
-        backgroundColor: '#f6f6f6',
         width: '90%',
     },
     listView: {

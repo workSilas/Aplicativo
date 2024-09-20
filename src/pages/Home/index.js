@@ -12,38 +12,40 @@ export default function Home() {
 
     const fontSizeVH = height * 0.68; // 5vh
 
-    const [selected, setSelected] = React.useState("3 Andar");
+    const [selected, setSelected] = React.useState("Patio");
     const [salas, setSalas] = React.useState("");
 
     const data = [
-        { key: '3 Andar', value: '3 Andar', },
+        { key: 'Auditorio', value: 'Auditorio', },
         { key: '2 Andar', value: '2 Andar' },
         { key: '1 Andar', value: '1 Andar' },
-        { key: 'Pátio', value: 'Pátio', },
+        { key: 'Patio', value: 'Patio', },
     ]
     const Salas = {
-        'Pátio': [
-            { key: '1', value: 'Sala 4', },
-            { key: '2', value: 'Sala 5', },
-            { key: '3', value: 'Sala 6', },
+        'Patio': [
+            { key: 'Sala 4', value: 'Sala 4', },
+            { key: 'Sala 6', value: 'Sala 6', },
+            { key: 'Oficina Mecanica', value: 'Oficina Mecanica', },
+            { key: 'Oficina Eletrica', value: 'Oficina Eletrica', },
+            { key: 'Cedesp', value: 'Cedesp', },
+            { key: 'Fios de Berenice', value: 'Fios de Berenice', },
+            { key: 'Info Escola', value: 'Info Escola', },
         ],
         '1 Andar': [
-            { key: '4', value: 'Sala 15', },
-            { key: '5', value: 'Sala 16', },
-            { key: '6', value: 'Sala 17', },
-            { key: '7', value: 'Sala 18', },
-            { key: '8', value: 'Sala 19', },
-            { key: '9', value: 'Sala 20', },
+            { key: 'Sala 18', value: 'Sala 18', },
+            { key: 'Sala 19', value: 'Sala 19', },
+            { key: 'Sala 20', value: 'Sala 20', },
         ],
         '2 Andar': [
-            { key: '10', value: 'Sala 24', },
-            { key: '11', value: 'Sala 25', },
-            { key: '12', value: 'Sala 26', },
-            { key: '13', value: 'Sala 27', },
+            { key: 'Sala 24', value: 'Sala 24', },
+            { key: 'Sala 25', value: 'Sala 25', },
+            { key: 'Sala 26', value: 'Sala 26', },
+            { key: 'Sala 27', value: 'Sala 27', },
         ],
-        '3 Andar': [
-            { key: '14', value: 'Sala 30', },
-            { key: '15', value: 'Sala 33', },
+        'Auditorio': [
+            { key: 'RH', value: 'RH', },
+            { key: 'CATE', value: 'CATE', },
+            { key: 'Entrevista', value: 'Entrevista', },
         ],
     }
 
@@ -93,7 +95,7 @@ export default function Home() {
                                     setSelected={(val) => setSelected(val)}
                                     data={data}
                                     save="value"
-                                    defaultOption={'Pátio'}
+                                    defaultOption={'Patio'}
                                 />
                                 <SelectList
                                     boxStyles={{ borderRadius: 0, backgroundColor: '#fff' }}

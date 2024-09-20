@@ -1,8 +1,9 @@
-import { View, Text, ImageBackground, Image, TouchableOpacity, FlatList, SafeAreaView } from "react-native";
+import { View, Text, ImageBackground, Image, TouchableOpacity, FlatList, SafeAreaView, ScrollView } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import styles from "./styles";
 import { useEffect, useState } from "react";
 import axios from "axios";
+
 
 export default function Consulta() {
     const navegacao = useNavigation();
@@ -56,7 +57,7 @@ export default function Consulta() {
 
                         <TouchableOpacity
                             style={styles.refresh}
-                            onPress={() => { listaConsulta() }} // adiciona no array
+                            onPress={() => { listaConsulta() }} 
                         >
                             <Text style={styles.textRefresh}>atualizar</Text>
                         </TouchableOpacity>
@@ -65,7 +66,7 @@ export default function Consulta() {
                             <Text style={styles.title}>Visitas</Text>
                         </View>
 
-                        <FlatList           // O id na renderização é só para ver como vai ficar
+                        <FlatList           
                             style={styles.list}
 
                             data={consulta.reverse()}
