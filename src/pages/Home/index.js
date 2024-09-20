@@ -17,8 +17,8 @@ export default function Home() {
 
     const data = [
         { key: 'Auditorio', value: 'Auditorio', },
-        { key: '2 Andar', value: '2 Andar' },
-        { key: '1 Andar', value: '1 Andar' },
+        { key: 'Andar 2', value: 'Andar 2' },
+        { key: 'Andar 1', value: 'Andar 1' },
         { key: 'Patio', value: 'Patio', },
     ]
     const Salas = {
@@ -31,12 +31,12 @@ export default function Home() {
             { key: 'Fios de Berenice', value: 'Fios de Berenice', },
             { key: 'Info Escola', value: 'Info Escola', },
         ],
-        '1 Andar': [
+        'Andar 1': [
             { key: 'Sala 18', value: 'Sala 18', },
             { key: 'Sala 19', value: 'Sala 19', },
             { key: 'Sala 20', value: 'Sala 20', },
         ],
-        '2 Andar': [
+        'Andar 2': [
             { key: 'Sala 24', value: 'Sala 24', },
             { key: 'Sala 25', value: 'Sala 25', },
             { key: 'Sala 26', value: 'Sala 26', },
