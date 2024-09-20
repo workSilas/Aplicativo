@@ -93,10 +93,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around',
         marginTop: 20,
-        borderRadius: 12, 
+        borderRadius: 12,
         padding: 20,
         backgroundColor: 'orange',
-        width: '100%' 
+        width: '100%'
     },
     itemList: {
         fontWeight: "700",

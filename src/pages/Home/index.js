@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles";
 import { View, Text, ImageBackground, Image, TouchableOpacity, ScrollView, SafeAreaView } from "react-native";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import { Dimensions } from "react-native";
 import { SelectList } from 'react-native-dropdown-select-list'
 
