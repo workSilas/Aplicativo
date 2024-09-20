@@ -25,9 +25,8 @@ export default function Consulta() {
         marcarVisita();
     }, [])
 
-
     async function listaConsulta() {
-        let resp = await axios.get(url, { headers: { 'x-access-token': token }})
+        let resp = await axios.get(`${url}/${andar}/${sala}`, { headers: { 'x-access-token': token }})
         setConsulta(resp.data);
     }
 
@@ -75,9 +74,7 @@ export default function Consulta() {
                             renderItem={({ item }) => {
                                 return (
                                     <View style={styles.listView}>
-                                        <Text style={styles.itemList}>{item.id}</Text>
-                                        <Text style={styles.itemList}>{item.sala}</Text>
-                                        <Text style={styles.itemList}>{item.code}</Text>
+                                        <Text style={styles.itemList}>{item.DT_VISITA}</Text>
                                     </View>
                                 )
                             }}

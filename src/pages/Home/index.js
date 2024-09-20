@@ -12,13 +12,13 @@ export default function Home() {
 
     const fontSizeVH = height * 0.68; // 5vh
 
-    const [selected, setSelected] = React.useState("3ºAndar");
+    const [selected, setSelected] = React.useState("3 Andar");
     const [salas, setSalas] = React.useState("");
 
     const data = [
-        { key: '3ºAndar', value: '3ºAndar', },
-        { key: '2ºAndar', value: '2ºAndar' },
-        { key: '1ºAndar', value: '1ºAndar' },
+        { key: '3 Andar', value: '3 Andar', },
+        { key: '2 Andar', value: '2 Andar' },
+        { key: '1 Andar', value: '1 Andar' },
         { key: 'Pátio', value: 'Pátio', },
     ]
     const Salas = {
@@ -27,7 +27,7 @@ export default function Home() {
             { key: '2', value: 'Sala 5', },
             { key: '3', value: 'Sala 6', },
         ],
-        '1ºAndar': [
+        '1 Andar': [
             { key: '4', value: 'Sala 15', },
             { key: '5', value: 'Sala 16', },
             { key: '6', value: 'Sala 17', },
@@ -35,13 +35,13 @@ export default function Home() {
             { key: '8', value: 'Sala 19', },
             { key: '9', value: 'Sala 20', },
         ],
-        '2ºAndar': [
+        '2 Andar': [
             { key: '10', value: 'Sala 24', },
             { key: '11', value: 'Sala 25', },
             { key: '12', value: 'Sala 26', },
             { key: '13', value: 'Sala 27', },
         ],
-        '3ºAndar': [
+        '3 Andar': [
             { key: '14', value: 'Sala 30', },
             { key: '15', value: 'Sala 33', },
         ],
@@ -72,7 +72,8 @@ export default function Home() {
                             <TouchableOpacity
                                 style={styles.consulta}
                                 onPress={() => navegacao.navigate('Consulta', {
-                                    salaSelecionada: salas
+                                    sala: salas,
+                                    andar: selected
                                 })} // estou enviando a sala como se fosse um parametro de "rota", e la na tela "consulta" irei recupera-lo.
                             >
 
